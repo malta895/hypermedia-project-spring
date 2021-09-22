@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-public class CartItem implements Serializable {
+public class CartItem {
 
     @EmbeddedId
     private CartItemKey id;

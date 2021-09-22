@@ -1,6 +1,9 @@
 package com.malta895.hypermediaproject.entities;
 
+import com.sun.source.tree.LambdaExpressionTree;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name = "author")
 @Entity
@@ -23,6 +26,11 @@ public class Author {
     public String getName() {
         return name;
     }
+
+    @ManyToMany
+    @JoinTable(name = "author_book", joinColumns = {@JoinColumn(name = "author")},
+            inverseJoinColumns = {@JoinColumn(name = "book")})
+    private List<Book> books;
 
     public String getBiography() {
         return biography;

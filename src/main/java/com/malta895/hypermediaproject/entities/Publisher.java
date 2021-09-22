@@ -14,7 +14,7 @@ public class Publisher {
     @ManyToOne
     private Address hqLocation;
 
-    @OneToMany
+    @OneToMany(mappedBy = "publisher")
     private List<Book> books;
 
     private String name;
